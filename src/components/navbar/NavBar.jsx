@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react'
+import styles from './NavBar.module.css'
 
 
 const links = [
@@ -38,13 +39,14 @@ const links = [
 
 function NavBar() {
   return (
-    <div>
-        <Link href="/">Italia</Link>
+    <div className={styles.container}>
+        <Link href="/" className={styles.icon
+        }>Italia</Link>
 
-        <div>
+        <div className={styles.links}>
             {links.map((link, id) => {
                 return (
-                    <Link key={id} href={link.url}>{link.title}</Link>
+                    <Link key={id} href={link.url} className={styles.link}>{link.title}</Link>
                 )
             })}
         </div>

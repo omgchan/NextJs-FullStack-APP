@@ -1,0 +1,27 @@
+.container {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.links {
+    display: flex;
+    gap: 2rem;
+    transition: all 0.3s ease;
+}
+.link {
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+.link:hover {
+    color: #fff;
+}
+.links:hover {
+    color: #fff;
+}
