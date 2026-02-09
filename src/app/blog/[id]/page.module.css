@@ -1,0 +1,166 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+}
+
+.article {
+    width: 100%;
+    max-width: 800px;
+}
+
+.backLink {
+    color: #239c61;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.backLink:hover {
+    transform: translateX(-5px);
+}
+
+.header {
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    line-height: 1.3;
+}
+
+.meta {
+    display: flex;
+    gap: 30px;
+    font-size: 16px;
+    color: #888;
+}
+
+.date {
+    color: #239c61;
+    font-weight: 600;
+}
+
+.author {
+    color: #888;
+}
+
+.imageContainer {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.image {
+    object-fit: cover;
+}
+
+.content {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #bbb;
+    margin-bottom: 60px;
+}
+
+.content p {
+    margin-bottom: 20px;
+}
+
+.relatedPosts {
+    width: 100%;
+    max-width: 1000px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 60px;
+    margin-top: 60px;
+}
+
+.relatedPosts h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #239c61;
+}
+
+.relatedGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.relatedCard {
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.relatedCard:hover {
+    transform: translateY(-5px);
+    border-color: #239c61;
+}
+
+.relatedImage {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.relatedCard h3 {
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #fff;
+}
+
+.relatedCard:hover h3 {
+    color: #239c61;
+}
+
+.notFound {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.notFound h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #239c61;
+}
+
+.notFound a {
+    color: #239c61;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 40px 15px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .imageContainer {
+        height: 250px;
+    }
+
+    .content {
+        font-size: 16px;
+    }
+
+    .relatedGrid {
+        grid-template-columns: 1fr;
+    }
+}
