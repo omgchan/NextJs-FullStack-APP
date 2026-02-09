@@ -1,6 +1,21 @@
 .container {
+    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    font-size: 14px;   
+}
+
+.socials {
+    display: flex;
+    gap: 10px;
+    align-items: center ;
+}
+.icon {
+    cursor: pointer;
+    transition: hover 0.3s ease;
+    opacity: 0.6;
+}
+.icon:hover {
+    opacity: 1;
 }
