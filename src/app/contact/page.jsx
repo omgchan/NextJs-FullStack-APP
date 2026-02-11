@@ -15,7 +15,7 @@ function Contact() {
           <input type="text" placeholder='Name' className={styles.input}/>
           <input type="email" placeholder='Email' className={styles.input}/>
           <textarea placeholder='Message' className={styles.textArea} cols="30" rows="10"></textarea>
-          <Button text="Send" url="#"/>
+          <Button text="Send" url="/"/>
         </form>
 
       </div>

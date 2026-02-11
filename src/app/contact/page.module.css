@@ -65,6 +65,7 @@
     border-radius: 5px;
     font-size: 16px;
     font-family: inherit;
+    color: #ddd;
 }
 
 .input:focus, .textArea:focus {

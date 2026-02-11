@@ -2,46 +2,17 @@ import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
-function Blog() {
-  const data = [
-    {
-      id: 1,
-      title: 'The Future of Web Development: Trends to Watch in 2025',
-      desc: 'Explore the latest trends in web development, including AI integration, progressive web apps, and the rise of serverless architecture.',
-      image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg',
-      url: '/blog/1',
-      date: 'Jan 15, 2025',
-      author: 'John Doe'
-    },
-    {
-      id: 2,
-      title: 'Mastering React: Advanced Patterns and Best Practices',
-      desc: 'Deep dive into advanced React patterns including hooks, context API, and performance optimization techniques for building scalable applications.',
-      image: 'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg',
-      url: '/blog/2',
-      date: 'Jan 12, 2025',
-      author: 'Jane Smith'
-    },
-    {
-      id: 3,
-      title: 'CSS Grid vs Flexbox: When to Use Each',
-      desc: 'A comprehensive guide to understanding the differences between CSS Grid and Flexbox, with practical examples and use cases for each.',
-      image: 'https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg',
-      url: '/blog/3',
-      date: 'Jan 10, 2025',
-      author: 'Mike Johnson'
-    },
-    {
-      id: 4,
-      title: 'TypeScript Tips: Leveling Up Your Type Safety',
-      desc: 'Learn advanced TypeScript techniques to write safer, more maintainable code with better type inference and error prevention.',
-      image: 'https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg',
-      url: '/blog/4',
-      date: 'Jan 8, 2025',
-      author: 'Sarah Wilson'
-    }
-  ]
+
+
+async function Blog() {
+  const data = await fetch('https://api.vercel.app/blog')
+  if (!data.ok) {
+    throw notFound();
+  }
+  const posts = await data.json();
+
 
   return (
     <div className={styles.container}>
@@ -51,12 +22,13 @@ function Blog() {
       </div>
 
       <div className={styles.itemContainer}>
-        {data.map((item) => (
-          <Link href={item.url} className={styles.item} key={item.id}>
+        {posts.map((item) => (
+          <Link href={`/blog/${item.id}`} className={styles.item} key={item.id}>
             <div className={styles.imageContainer}>
               <Image 
-                src={item.image} 
-                fill={true} 
+                src=
+                 { item.image || "https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" } 
+                fill
                 alt={item.title}
                 className={styles.image} 
               />
