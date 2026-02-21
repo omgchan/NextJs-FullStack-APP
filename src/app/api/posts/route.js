@@ -14,9 +14,5 @@ export const GET = async (request) => {
         console.error("Error fetching posts:", error);
         return new NextResponse("Internal Server Error", { status: 500 });
     }
-
-
-
-
-    
+   
 }
